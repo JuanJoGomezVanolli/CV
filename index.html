@@ -3,136 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="1.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&family=Montserrat:ital,wght@1,200&display=swap"
+      rel="stylesheet"
+    />
     <title>Juan Jose Gomez Vanolli</title>
   </head>
   <body>
-    <table cellspacing="25">
-      <tr>
-        <td><img src="Images/profile1.jpg" height="300" width="300" /></td>
-        <td>
-          <h1>Juan Jose Gomez Vanolli</h1>
-          <p>
-            Corporate & Consulting Research @
-            <a href="https://www.ibm.com/consulting">IBM Consulting</a> /
-            FullStack Developer.
+    <div class="top-container">
+      <img class="top-cloud" src="Images/cloud.png" alt="cloud-img" />
+      <h1>I'm Juan Jose</h1>
+      <h2>a programmer<h2>
+      <img class="bottom-cloud" src="Images/cloud.png" alt="cloud-img" />
+      <img src="Images/mountain.png" alt="mountain-img" />
+    </div>
+    <div class="middle-container">
+      <div class="profile">
+        <img class="profile-photo-top"
+          height="150px"
+          width="150"
+          src="Images/profile1.jpg"
+          alt="profile-photo"
+        />
+        <h2>Hello.</h2>
+        <p class="self-description">
+          Lorem ipsum dolor sit amet, vitae volutpat, dui conubia, dolor urna.
+          Non auctor, montes nulla distinctio.
+        </p>
+      </div>
+      <hr />
+      <div class="skills">
+        <h2>My Skills.</h2>
+        <div class="skill-row">
+          <img
+            class="data"
+            src="https://cdn-icons-png.flaticon.com/512/1907/1907575.png"
+            alt="first-skill"
+          />
+          <h3>Lorem & Ipsum</h3>
+          <p >
+            Lorem ipsum dolor sit amet, quis in duis, iaculis id felis.
+            Consectetuer vestibulum, nunc urna lectus, erat ligula. Hendrerit
+            nam, lectus ante, ut lorem eros.
           </p>
-          <p>
-            Proactive person with a very acute need to move foreward and learn
-            new
-            <br />
-            skills. Highly used to work under preasure with fast paced
-            deliverables.
-            <br />
-            Very strong coding knowledge focusing on web development and
-            application
-            <br />
-            development (Java, Javascript, HTML, CSS, Python).
+        </div>
+        <div class="skill-row">
+          <img
+            class="code"
+            src="https://cdn-icons-png.flaticon.com/512/2431/2431633.png"
+            alt="second-skill"
+          />
+          <h3>Lorem Ipsum Dolor</h3>
+          <p >
+            Lorem ipsum dolor sit amet, mauris sed consectetuer. Etiam et eu,
+            bibendum interdum, lacus quis mauris. Curabitur wisi, quisque vel
+            eu, rutrum nam.
           </p>
-        </td>
-      </tr>
-    </table>
+        </div>
+      </div>
+      <hr />
+      <div class="contact-me">
+        <h2>Get In Touch</h2>
+        <h3>Lorem ipsum dolor sit amet, non elit.</h3>
+        <p class="contact-message">
+          Lorem ipsum dolor sit amet, in quis, aenean amet. Phasellus sodales,
+          tellus donec dui, ornare erat.
+        </p>
+        <a class="btn" href="mailto:name@email.com">CONTACT ME</a>
+      </div>
+    </div>
 
-    <hr />
-    <h2>Certifications</h2>
-    <ul>
-      <li>
-        <strong>Excel Certificacion Levels (I,II,III)</strong>
-        <ul>
-          <li>Issued by TKM Department (Acuity Knowledhe Partners)</li>
-          <li>05/2019 - 03/2020</li>
-        </ul>
-        <li> <strong>Python 3 Master Course</strong></li>
-        <ul>
-            <li>25.5 hs</li>
-            <li>Issued by Udemy </li>
-            <li>12/2021</li>
-            <li><a href="https://www.udemy.com/certificate/UC-f1860cc4-d5b6-4dc2-98f1-7791ef3647c7/">Certificate Link</a></li>
-          </ul>
-        </li>
-        <li> <strong>Data Analysis with Pandas</strong></li>
-        <ul>
-            <li>20.5 hs</li>
-            <li>Issued by Udemy</li>
-            <li>12/2021</li>
-            <li><a href="https://www.udemy.com/certificate/UC-474ad02b-cc3d-4778-a446-7c32ad3bf8a7/">Certificate Link</a></li>
-          </ul>
-    </ul>
-    <h2>Education</h2>
-    <ul>
-      <li>
-        <strong>Electrical Engineering</strong> / Universidad de Costa Rica
-      </li>
-      <li>
-        <strong>Industrial Engineering</strong> / Universidad Latina de Costa
-        Rica
-      </li>
-      <li>
-        <strong>Cisco CCNA Modules I, II, III</strong> / Fundacion Omar Dengo
-      </li>
-      <li>
-        <strong>High School Diploma</strong> / Saint Clare High School
-      </li>
-    </ul>
-    
-    <hr />
-
-    <h2> Skills </h2>
-    
-    <table cellspacing="40">
-        <tr>
-            <td>
-                <table>
-                    <tr>
-                        <td> English </td>
-                        <td> 5 </td>
-                    </tr>
-                    <tr>
-                        <td> Spanish </td>
-                        <td> 5 </td>
-                    </tr>
-                </table>
-            </td>
-            <td>
-                <table>
-                    <tr>
-                        <td> Python </td>
-                        <td> 4.7 </td>
-                    </tr>
-                    <tr>
-                        <td> C++ </td>
-                        <td> 4 </td>
-                    </tr>
-                </table>
-            </td>
-            <td>
-                <table>
-                    <tr>
-                        <td> Java </td>
-                        <td> 4 </td>
-                    </tr>
-                    <tr>
-                        <td> Excel </td>
-                        <td> 5 </td>
-                    </tr>
-                </table>
-            </td>
-            <td>
-                <table>
-                    <tr>
-                        <td> English </td>
-                        <td> 5 </td>
-                    </tr>
-                    <tr>
-                        <td> Spanish </td>
-                        <td> 5 </td>
-                    </tr>
-                </table>
-            </td> 
-        </tr>
-
-    </table>
-
-    <h2> <a href="contact-me.html">Contact Me </a></h2>
+    <div class="bottom-container">
+      <a class="footer-link" href="https://www.linkedin.com/">LinkedIn</a>
+      <a class="footer-link" href="https://twitter.com/">Twitter</a>
+      <a class="footer-link" href="https://www.appbrewery.co/">Website</a>
+      <p>© Name Surname.</p>
+    </div>
   </body>
 </html>

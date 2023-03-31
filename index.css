@@ -1,5 +1,7 @@
 body {
-  background-color: rgb(243, 133, 133);
+  margin: 0;
+  text-align: center;
+  font-family: "Merriweather", serif;
 }
 
 hr {
@@ -8,4 +10,131 @@ hr {
   border-color: grey;
   border-top-style: dotted;
   border-width: 7px;
+  margin: 100px auto 100px auto;
+}
+
+h1 {
+  margin-top: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 4rem;
+  margin: 50px auto 0 auto;
+  color: #66bfbf;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  color: #66bfbf;
+  font-weight: normal;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  color: #11999e;
+}
+
+a {
+  color: #11999e;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #5fabae;
+}
+
+p {
+  line-height: 2;
+}
+
+.top-container {
+  padding-top: 100px;
+  background-color: rgb(206, 245, 253);
+  position: relative;
+}
+
+.bottom-cloud {
+  position: absolute;
+  left: 650px;
+  bottom: 300px;
+}
+
+.top-cloud {
+  position: absolute;
+  right: 650px;
+  top: 50px;
+}
+
+.skill-row {
+  position: relative;
+  width: 50%;
+  margin: 100px auto 200px auto;
+  text-align: left;
+  line-height: 2;
+}
+
+.data {
+  width: 25%;
+  float: left;
+  margin-right: 30px;
+}
+
+.code {
+  width: 25%;
+  float: right;
+  margin-left: 30px;
+}
+
+.profile-photo-top {
+  border-radius: 50%;
+}
+
+.self-description {
+  width: 30%;
+  margin: auto;
+}
+
+.bottom-container {
+  background-color: #66bfbf;
+  padding: 50px 0 20px;
+}
+
+.footer-link {
+  font-size: 1rem;
+  padding: 0 30px 0 30px;
+}
+
+.contact-me {
+  margin-bottom: 100px;
+}
+
+.btn {
+  background: #11cdd4;
+  background-image: -webkit-linear-gradient(top, #11cdd4, #11999e);
+  background-image: -moz-linear-gradient(top, #11cdd4, #11999e);
+  background-image: -ms-linear-gradient(top, #11cdd4, #11999e);
+  background-image: -o-linear-gradient(top, #11cdd4, #11999e);
+  background-image: linear-gradient(to bottom, #11cdd4, #11999e);
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #30e3cb;
+  background-image: -webkit-linear-gradient(top, #30e3cb, #2bc4ad);
+  background-image: -moz-linear-gradient(top, #30e3cb, #2bc4ad);
+  background-image: -ms-linear-gradient(top, #30e3cb, #2bc4ad);
+  background-image: -o-linear-gradient(top, #30e3cb, #2bc4ad);
+  background-image: linear-gradient(to bottom, #30e3cb, #2bc4ad);
+  text-decoration: none;
+}
+
+.contact-message {
+  width: 40%;
+  margin: 40px auto 60px;
 }
