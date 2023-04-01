@@ -1,0 +1,443 @@
+/* Inicio de website style
+*/
+
+@font-face {
+  font-family: "Computer";
+  src: url(Fonts/cmunrm.ttf);
+}
+
+body {
+  margin: 0;
+  height: 1920px;
+  width: 1080;
+}
+
+.background {
+  position: relative;
+  background: white
+  height: 1920px;
+}
+
+.banner {
+  position: relative;
+  height: 3%;
+}
+
+.footnote {
+  bottom: 10%;
+  margin: 0px;
+  position: relative;
+  background-color: #474747;
+  height: 260px;
+}
+
+.instagram{
+  background: #f09433; 
+background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+position: absolute;
+  left: 93.8%;
+  top: 15%;
+  border: 0px;
+  font-size: 18px;
+  height: 36px;
+  width: 84px;
+  border-radius: 18px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  color: white;
+  box-shadow: 5px 5px 17px #0c0c0c;
+  }
+
+.Tweet {
+  position: absolute;
+  left: 94.1%;
+  top: 45%;
+  background-color: rgb(2,158,255);
+  color: white;
+  border: 0px;
+  font-size: 18px;
+  height: 36px;
+  width: 74px;
+  border-radius: 18px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 5px 5px 17px #0c0c0c;
+
+}
+
+.linkedIn {
+  position: absolute;
+  left: 94.2%;
+  top: 75%;
+  background-color: rgb(3, 90, 172);
+  color: white;
+  border: 0px;
+  font-size: 18px;
+  height: 36px;
+  width: 74px;
+  border-radius: 18px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 5px 5px 17px #0c0c0c;
+}
+
+.btnLayout {
+  position: absolute;
+  margin: auto;
+  width: 50%;
+  top: 20%;
+  text-align: center;
+  left: 27%;
+}
+
+.topBtn {
+  position: relative;
+  margin-top: 1px;
+  margin-right: 6%;
+  border: 0px solid black;
+  font: 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  cursor: pointer;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.topBtn:hover {
+  opacity: 0.5;
+}
+
+
+
+
+.firstSection {
+  height: 1920px;
+  background-color: transparent;
+}
+
+
+.secondSection {
+  top: 70%;
+  height: 2000px;
+  background-color: #dcdedf;
+}
+
+
+.fourSection {
+  top: 90%;
+  height: 36%;
+  background-color: #b1b8bc;
+}
+
+
+.text2 {
+  position: relative;
+  margin: auto;
+  width: 361px;
+  text-align: center;
+  top: 40%;
+  font-family: "Courier", monospace;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 1s;
+}
+
+h1 {
+  position: relative;
+  padding-left: 50px;
+  top: 10%;
+  font-family: "Verdana Pro Black", monospace;
+  margin: auto;
+}
+
+h2 {
+  position: relative;
+  top: 10%;
+  font-family: "Fairfax SM", monospace;
+  margin: auto;
+  padding: 50px;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+.textContainerPost_D {
+  position: relative;
+  height: 550px;
+  width: 550px;
+  background-color: #dcdedf;
+  top: 10%;
+  left: 10%;
+}
+
+.textContainerPost_L {
+  position: relative;
+  height: 550px;
+  width: 550px;
+  background-color: #e6e8eb;
+  top: 10%;
+  left: 10%;
+}
+
+.img1_1 {
+  position: absolute;
+  left: 25%;
+  top: 8%;
+}
+
+.img1_2{
+  position: relative;
+}
+
+.img2_1 {
+  position: absolute;
+  left: 25%;
+  top: 8%;
+}
+
+.img2_2{
+  position: relative;
+  left: 50%;
+  bottom: 50%;
+  box-shadow: 10px 10px 9px #868686;
+}
+.footnoteQuote {
+  position: relative;
+  color: white;
+  top: 70%;
+  margin-left: 1.5%;
+  width: 50%;
+  font-family: "Calibri", monospace;
+  font-style: italic;
+}
+
+.footnoteLogo {
+  position: relative;
+  
+}
+
+.jumbotronText {
+  position: absolute;
+  color: white;
+  font-family: "Calibri", monospace;
+  top: 26%;
+  left: 25%;
+  font-size: 80px;
+  font-weight:bolder;
+
+}
+
+.firstTextSecondSection {
+  position: relative;
+  color: #000000;
+  width: 1300px;
+  top: 13%;
+  left: 14.5%;
+  font-family: "Tahoma", monospace;
+  font-weight:bolder;
+  font-size: 40px;
+}
+
+.leftItem1 {
+  position: absolute;
+  background-color: #bc1888;
+  height: 240px;
+  width: 650px;
+  top: 60.7%;
+  left: 14.21%;
+  border-radius: 20px;
+  background-image: url('blog_1.jpg');
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.leftItem1:hover {
+  opacity: 0.8;
+}
+
+
+
+.rightItem1 {
+  position: relative;
+  background-color: #000000;
+  height: 240px;
+  width: 650px;
+  top: 18.3%;
+  left: 51.95%;
+  border-radius: 20px;
+  background-image: url('blog_2.jpg');
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.rightItem1:hover {
+  opacity: 0.8;
+}
+
+.leftItem2 {
+  position: relative;
+  background-color: #bc1888;
+  height: 240px;
+  width: 650px;
+  top: 27%;
+  left: 14.21%;
+  border-radius: 20px;
+  background-image: url('blog_3.jpg');
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.leftItem2:hover {
+  opacity: 0.8;
+}
+
+.rightItem2 {
+  position: relative;
+  background-color: #000000;
+  height: 240px;
+  width: 650px;
+  top: 15%;
+  left: 51.95%;
+  border-radius: 20px;
+  background-image: url('blog_4.jpeg');
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.rightItem2:hover {
+  opacity: 0.8;
+}
+
+
+.secondSectionText{
+  position: relative;
+  color: white;
+  margin: auto;
+  text-align: center;
+  top: 10%;
+  font-family: "Calibri", monospace;
+  font-size: 80px;
+  font-weight:bolder
+
+}
+
+.leftSlateTitle1 {
+  position: relative;
+  font-size: 27px;
+  font-weight:bolder;
+  font-family: "Calibri", monospace;
+  top: 20%;
+  left: 14.22%;
+}
+
+.rightSlateTitle1 {
+  position: relative;
+  font-size: 27px;
+  font-weight:bolder;
+  font-family: "Calibri", monospace;
+  top: 18%;
+  left: 52%;
+}
+
+
+
+.leftSlateTitlePosition{
+  position: relative;
+  top: 16%;
+}
+.leftSlateTitle2 {
+  position: relative;
+  font-size: 27px;
+  font-weight:bolder;
+  font-family: "Calibri", monospace;
+  left: 14.22%;
+  background: transparent;
+  border: 0px;
+  transition: 0.7s;
+  cursor: pointer;
+  
+}
+
+.leftSlateTitle2:hover {
+  opacity: 0.8;
+}
+
+
+
+.rightSlateTitle2 {
+  position: relative;
+  font-size: 27px;
+  font-weight:bolder;
+  font-family: "Calibri", monospace;
+  top:14.5%;
+  left: 52%;
+}
+
+.bodyText{
+  position: relative;
+  font-family: "Calibri", monospace;
+  left: 15%;
+  top: 14%;
+  font-size: 27px;
+}
+
+.img1_1 {
+  position: relative;
+  top:20%;
+  left: 45%;
+}
+
+
+.blogTitle{
+  position: relative;
+  font-family: "Computer";
+  font-size: 50px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-weight: bold;
+
+}
+
+.blogChapter{
+  position: relative;
+  font-family: "Computer";
+  font-size: 35px;
+  left: 20%;
+  font-weight:30px;
+  font-weight:bolder;
+
+}
+
+.blogSubChapter {
+  position: relative;
+  font-family: "Computer";
+  font-size: 26px;
+  left: 20%;
+  font-weight:bolder;
+}
+
+.text{
+  position: relative;
+  font-family: "Computer";
+  font-size: 20px;
+  left: 20%;
+  width: 62%;
+  text-align: justify;
+}
+
+
+.bodyText {
+  position: relative;
+  top: 15%;
+  left:18%;
+  width: 65%;
+  background: transparent;
+
+}
+
