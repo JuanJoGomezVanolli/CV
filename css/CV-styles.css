@@ -1,0 +1,179 @@
+#title {
+  background: linear-gradient(rgb(91, 140, 255), rgb(51, 51, 250));
+  color: white;
+}
+
+#second-section {
+  background-color: rgb(218, 216, 216);
+  color: rgb(29, 70, 191);
+}
+
+#third-section {
+  background-color: rgb(218, 216, 216);
+  color: rgb(29, 70, 191);
+}
+
+#fourth-section {
+  background-color: rgb(218, 216, 216);
+  color: rgb(29, 70, 191);
+  padding: 5% 0;
+}
+
+
+
+#service-title-text {
+  text-align: center;
+}
+
+#experience-title-text {
+  text-align: center;
+  margin: 50px 0;
+}
+
+#fifth-section {
+  background-color: rgb(75, 75, 75);
+}
+
+body {
+  font-family: "Montserrat";
+}
+
+.container-fluid {
+  padding: 3% 15%;
+}
+
+h1 {
+  font-family: "Montserrat";
+  line-height: 1.5;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.navbar {
+  padding: 0 0 4.5rem;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.6rem;
+  font-weight: lighter;
+}
+
+
+.title-image {
+  width: 60%;
+}
+
+h2 {
+  margin-top: 30px;
+  font-family: "Montserrat";
+  line-height: 1.5;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.title-experience{
+  margin: auto 0;
+}
+
+.skill-stand {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.experience-entry {
+  margin: 100px 0;
+  text-align: justify;
+}
+
+.company-logo {
+  margin-top:75px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#IbmLogo{
+  margin-top: 25%;
+
+}
+
+#acquityLogo{
+  margin-top: 35%;
+}
+
+.exp-text{
+  color:black;
+}
+
+#combine-exp-logo1 {
+  margin-top: 30px;
+}
+
+#combine-exp-logo2 {
+  margin: 0;
+}
+
+#education-special {
+  margin-top: 3%;
+}
+
+hr {
+  border-style: none;
+  width: 4%;
+  border-color: rgb(0, 0, 0);
+  border-top-style: dotted;
+  border-width: 7px;
+  margin: 0 auto 0 auto;
+}
+
+.company-name {
+  color: black;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2rem;
+}
+
+.university-name {
+  color: black;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 50px;
+}
+
+.special-logo {
+  margin-top: 40px;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.belowBrand {
+  font-family: "Ubuntu";
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.social-media-icon {
+  margin: 10px 11px;
+}
+
+.left-most-img {
+  margin-left: 0 ;
+}
+
+.quote-final{
+  color: white;
+  margin-top: 16px;
+}
