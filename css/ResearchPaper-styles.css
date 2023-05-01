@@ -1,0 +1,93 @@
+body {
+    font-family: "Montserrat";
+    background-color: white;
+  }
+
+#title {
+    background: transparent;
+    color: rgb(0, 0, 0);
+}
+
+#title1 {
+    text-align: center;
+    margin-top: 100px;
+    font-family: 'IBM Plex Serif', serif;
+}
+
+
+#fourth-section {
+    background-color: rgb(75, 75, 75);
+}
+
+.navbar-brand {
+    font-family: "Ubuntu";
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black;
+}
+
+.navbar {
+    padding: 0 0 4.5rem;
+    font-size: 1.6rem;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.container-fluid {
+    padding: 3% 15%;
+}
+
+.movements {
+    background-color: #fff;
+    overflow: scroll;
+    margin: 100px 100px;
+    height: 40rem;
+}
+
+.movements__row {
+    padding: 2.25rem 4rem;
+    display: flex;
+    align-items: center;
+}
+
+.Research-Title{
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.Research-Title:hover {
+    opacity: 0.7;
+  }
+
+
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.belowBrand {
+    font-family: "Ubuntu";
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.social-media-icon {
+    margin: 10px 11px;
+}
+
+.left-most-img {
+    margin-left: 0 ;
+}
+
+.quote-final{
+    color: white;
+    margin-top: 16px;
+}
+
