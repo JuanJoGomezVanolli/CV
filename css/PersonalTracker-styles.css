@@ -1,0 +1,46 @@
+body {
+  background-color: dimgray;
+}
+
+.score1 {
+  text-align: center;
+}
+
+.score2 {
+  text-align: center;
+  padding-left: 200px;
+}
+
+.main_title {
+  text-align: center;
+}
+
+.balance_form {
+  text-align: center;
+}
+
+.form_title {
+  font-size: 20px;
+  color: red;
+}
+
+.first-skill1 {
+  padding-left: 200px;
+}
+
+.first-skill2 {
+  padding-right: 200px;
+}
+
+.row {
+  margin-top: 6%;
+}
+
+.habbit {
+  text-align: center;
+  padding-left: 200px;
+}
+
+.habbit_form {
+  text-align: center;
+}
