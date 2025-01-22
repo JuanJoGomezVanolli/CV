@@ -79,7 +79,7 @@ hr {
 .tileObject {
   height: 330px;
   width: 350px;
-  background-color: antiquewhite;
+  background-color: rgb(221, 221, 221);
   display: inline-block;
   margin: 2% 2%;
   border-color: black;
@@ -120,7 +120,7 @@ hr {
   border: 0.2rem solid;
   border-radius: 0.5rem;
   margin: 4% auto;
-  background-color: antiquewhite;
+  background-color: rgb(216, 216, 216);
 }
 
 /* Seccion de Titulos en mainObjectContainer */
