@@ -1,0 +1,39 @@
+body {
+  font-family: "Montserrat";
+  background-color: white;
+}
+
+.titulo-1 {
+  padding: 30px;
+  display: inline-block;
+  margin-top: 5%;
+}
+
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+.page1 {
+  text-align: center;
+}
+
+.issImage {
+  margin-top: 5%;
+  margin-left: 50%;
+}
+
+.foot-Note {
+  margin-left: 20px;
+  width: 20%;
+}
+
+.LongYLat {
+  text-align: center;
+}

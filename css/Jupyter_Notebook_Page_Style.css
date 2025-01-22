@@ -1,0 +1,100 @@
+body {
+  font-family: "Montserrat";
+  background-color: white;
+}
+
+
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
+}
+
+#title {
+  background: transparent;
+  color: rgb(0, 0, 0);
+}
+
+#title1 {
+  text-align: center;
+  margin-top: 100px;
+  font-family: "IBM Plex Serif", serif;
+}
+
+#fourth-section {
+  background-color: rgb(75, 75, 75);
+}
+
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
+}
+
+.navbar {
+  padding: 0 0 4.5rem;
+  font-size: 1.6rem;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.container-fluid {
+  padding: 3% 15%;
+}
+
+.belowBrand {
+  font-family: "Ubuntu";
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.social-media-icon {
+  margin: 10px 11px;
+}
+
+.left-most-img {
+  margin-left: 0;
+}
+
+.quote-final {
+  color: white;
+  margin-top: 16px;
+}
+
+.research-box {
+  margin: 5% 8% 8% 5%;
+  padding: 0 20%;
+}
+
+.research-body {
+  text-align: justify;
+  margin-bottom: 70px;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.research-subtitle {
+  font-size: 25px;
+}
+
+.text-image {
+  text-align: center;
+}
+
+#after-image-text {
+  margin-top: 5%;
+}
+.map-image {
+  margin-bottom: 30px;
+}
+.image-footnote {
+  font-size: 0.7rem;
+  padding: 0 10%;
+  font-style: italic;
+  font-weight: 300;
+}
