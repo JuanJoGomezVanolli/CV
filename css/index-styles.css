@@ -49,7 +49,7 @@ body {
   inset: 0;
   background-size: cover;
   background-position: center;
-  animation: bgCycle 21s infinite;
+  animation: bgCycle 28s infinite;
   z-index: 0;
 }
 
@@ -75,11 +75,19 @@ body {
   animation-delay: -14s;
 }
 
+.hero-bg-5 {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.42) 55%, rgba(0,0,0,0.18) 100%),
+    url("../images/IndexBanner4.jpeg");
+  background-position: center 40%;
+  animation-delay: -21s;
+}
+
 @keyframes bgCycle {
   0%   { opacity: 1; }
-  33%  { opacity: 1; }
-  38%  { opacity: 0; }
-  95%  { opacity: 0; }
+  25%  { opacity: 1; }
+  29%  { opacity: 0; }
+  96%  { opacity: 0; }
   100% { opacity: 1; }
 }
 
