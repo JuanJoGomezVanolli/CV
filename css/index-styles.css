@@ -49,7 +49,7 @@ body {
   inset: 0;
   background-size: cover;
   background-position: center;
-  animation: bgCycle 14s infinite;
+  animation: bgCycle 21s infinite;
   z-index: 0;
 }
 
@@ -67,11 +67,19 @@ body {
   animation-delay: -7s;
 }
 
+.hero-bg-4 {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.48) 55%, rgba(0,0,0,0.22) 100%),
+    url("../images/BannerCV_port.jpg");
+  background-position: center 68%;
+  animation-delay: -14s;
+}
+
 @keyframes bgCycle {
   0%   { opacity: 1; }
-  43%  { opacity: 1; }
-  50%  { opacity: 0; }
-  93%  { opacity: 0; }
+  33%  { opacity: 1; }
+  38%  { opacity: 0; }
+  95%  { opacity: 0; }
   100% { opacity: 1; }
 }
 
