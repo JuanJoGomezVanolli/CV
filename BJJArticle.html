@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brazilian Jiu-Jitsu: The Gentle Art — KnowSci</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --dark:    #09090f;
+        --light:   #f4f5f8;
+        --white:   #ffffff;
+        --accent:  #7c3aed;
+        --text:    #0f172a;
+        --text-2:  #475569;
+        --border:  #e2e8f0;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: "Inter", -apple-system, sans-serif;
+        background: var(--light);
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── Nav ── */
+      .art-nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--dark);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 6%;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .art-nav-logo {
+        font-family: "Ubuntu", sans-serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+      }
+
+      .art-nav-back {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: rgba(255,255,255,0.50);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .art-nav-back:hover { color: white; }
+
+      /* ── Hero ── */
+      .art-hero {
+        position: relative;
+        height: 480px;
+        overflow: hidden;
+      }
+
+      .art-hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 30%;
+        display: block;
+      }
+
+      .art-hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(9,9,15,0.90) 0%, rgba(9,9,15,0.35) 55%, transparent 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 48px 8%;
+      }
+
+      .art-hero-tag {
+        display: inline-block;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #a78bfa;
+        margin-bottom: 14px;
+      }
+
+      .art-hero-title {
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        line-height: 1.05;
+        color: white;
+        max-width: 700px;
+        margin-bottom: 16px;
+      }
+
+      .art-hero-meta {
+        font-size: 0.78rem;
+        color: rgba(255,255,255,0.45);
+        font-weight: 500;
+        letter-spacing: 0.04em;
+      }
+
+      /* ── Article body ── */
+      .art-body {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 64px 6% 100px;
+      }
+
+      .art-body p {
+        font-size: 1.05rem;
+        line-height: 1.82;
+        color: var(--text-2);
+        margin-bottom: 24px;
+      }
+
+      .art-body h2 {
+        font-size: 1.35rem;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        color: var(--text);
+        margin: 48px 0 16px;
+        padding-top: 8px;
+        border-top: 2px solid var(--border);
+      }
+
+      .art-body ul {
+        margin: 0 0 24px 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .art-body ul li {
+        display: flex;
+        gap: 14px;
+        font-size: 1.05rem;
+        line-height: 1.75;
+        color: var(--text-2);
+      }
+
+      .art-body ul li::before {
+        content: '—';
+        color: var(--accent);
+        font-weight: 700;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      /* ── Footer ── */
+      .art-footer {
+        background: var(--dark);
+        padding: 52px 0;
+      }
+
+      .art-footer-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 6%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 48px;
+      }
+
+      .art-footer-logo {
+        display: block;
+        font-family: "Ubuntu", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 16px;
+        text-decoration: none;
+      }
+
+      .art-footer-socials { display: flex; gap: 12px; }
+      .art-footer-socials a img {
+        width: 20px; height: 20px;
+        opacity: 0.45;
+        filter: brightness(0) invert(1);
+        transition: opacity 0.2s;
+      }
+      .art-footer-socials a:hover img { opacity: 1; }
+
+      .art-footer-quote {
+        font-size: 0.82rem;
+        line-height: 1.9;
+        color: rgba(255,255,255,0.32);
+        font-style: italic;
+        max-width: 420px;
+        text-align: right;
+      }
+
+      @media (max-width: 768px) {
+        .art-hero { height: 360px; }
+        .art-hero-overlay { padding: 36px 5%; }
+        .art-body { padding: 48px 5% 72px; }
+        .art-footer-inner { flex-direction: column; gap: 28px; padding: 0 5%; }
+        .art-footer-quote { text-align: left; }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Nav -->
+    <nav class="art-nav">
+      <a class="art-nav-logo" href="index.html">KnowSci</a>
+      <a class="art-nav-back" href="ResearchBlog.html">← The Blog</a>
+    </nav>
+
+    <!-- Hero -->
+    <div class="art-hero">
+      <img src="images/BJJResearchBlog1.jpg" alt="Brazilian Jiu-Jitsu" />
+      <div class="art-hero-overlay">
+        <span class="art-hero-tag">Martial Arts &nbsp;·&nbsp; March 15, 2024 &nbsp;·&nbsp; 8 min read</span>
+        <h1 class="art-hero-title">Brazilian Jiu-Jitsu:<br>The Gentle Art</h1>
+      </div>
+    </div>
+
+    <!-- Article -->
+    <article class="art-body">
+
+      <p>Brazilian Jiu-Jitsu (BJJ), often referred to as "the gentle art," is a martial art that emphasizes technique, leverage, and strategy over brute strength. With roots tracing back to Japan and a rich history shaped in Brazil, BJJ has emerged as one of the most effective and efficient fighting techniques in the world. This essay will explore the history of Brazilian Jiu-Jitsu, its philosophy as a gentle art, the physics underlying its techniques, and the reasons why it stands out among other fighting styles.</p>
+
+      <h2>The History of Brazilian Jiu-Jitsu</h2>
+      <p>The origins of Brazilian Jiu-Jitsu can be traced back to traditional Japanese Jujutsu and Kodokan Judo. In the early 20th century, Mitsuyo Maeda, a Japanese judoka and member of the Kodokan, traveled extensively to demonstrate Judo and engage in combat challenges. His journey eventually brought him to Brazil in 1914, where he met Carlos Gracie, a young Brazilian with an interest in martial arts.</p>
+      <p>The Gracie family played a pivotal role in popularizing BJJ, particularly through the development of the Gracie Challenge, where practitioners would test their skills against fighters from other disciplines. The art gained global recognition with the advent of mixed martial arts (MMA), especially through Royce Gracie's dominance in the early Ultimate Fighting Championship (UFC) events.</p>
+
+      <h2>The Philosophy of the Gentle Art</h2>
+      <p>The term "gentle art" is derived from the Japanese word "ju" in Jujutsu, which means gentle or yielding. Unlike striking-based martial arts, BJJ focuses on grappling, joint locks, and chokeholds, allowing practitioners to neutralize threats without causing significant harm. This philosophy aligns with the idea of overcoming aggression with technique and strategy rather than meeting force with force.</p>
+      <p>At its core, BJJ teaches that size and strength are secondary to technique and leverage. Practitioners are trained to use their opponent's energy against them, redirecting force rather than resisting it. A smaller individual can use proper positioning and timing to execute a sweep or submission on a much larger opponent — making BJJ accessible to people of all sizes, genders, and physical abilities.</p>
+      <p>Furthermore, the art fosters humility and respect. Practitioners often spar or "roll" with one another in a controlled environment, allowing them to test their skills while ensuring mutual safety. This collaborative approach builds trust, camaraderie, and a sense of community within the practice.</p>
+
+      <h2>The Physics of Brazilian Jiu-Jitsu</h2>
+      <p>Brazilian Jiu-Jitsu is deeply rooted in the principles of physics, particularly the concepts of force, applied pressure, and balance. Understanding these principles sheds light on why BJJ techniques are so effective.</p>
+      <ul>
+        <li><strong>Force and Leverage:</strong> Practitioners learn to maximize force efficiency through leverage. When applying an armbar, the practitioner uses their entire body to isolate and extend the opponent's arm — multiplying applied force and making it possible to control a larger opponent with minimal effort.</li>
+        <li><strong>Applied Pressure:</strong> Pressure plays a critical role in controlling an opponent on the ground. By concentrating force over a small surface area, a practitioner creates discomfort and immobilizes their opponent — a direct application of pressure = force/area.</li>
+        <li><strong>Balance and the Center of Mass:</strong> Disrupting the opponent's center of mass by pushing or pulling at specific angles creates unbalance, making them vulnerable to sweeps or takedowns. During a hip toss, the practitioner lowers their center of mass below the opponent's while using their hips as a fulcrum.</li>
+        <li><strong>Momentum:</strong> BJJ practitioners exploit unbalance by using momentum. A well-timed pull can cause the opponent to overextend, creating openings for sweeps or submissions by redirecting their own momentum against them.</li>
+      </ul>
+
+      <h2>Why Jiu-Jitsu is More Efficient Than Other Fighting Techniques</h2>
+      <ul>
+        <li><strong>Real-World Application:</strong> Unlike traditional martial arts that rely on forms or predetermined sequences, BJJ emphasizes live sparring and practical application — ensuring techniques work in real situations.</li>
+        <li><strong>Control Without Harm:</strong> BJJ allows practitioners to subdue opponents without inflicting serious injury, particularly valuable in self-defense where excessive force may not be appropriate.</li>
+        <li><strong>Leverage Over Strength:</strong> The emphasis on leverage makes BJJ unique. A smaller practitioner can neutralize a larger opponent using angles, positioning, and biomechanics — famously demonstrated by Royce Gracie in the early UFC.</li>
+        <li><strong>Adaptability:</strong> BJJ can be practiced by individuals of all ages and physical conditions, and its techniques can be modified for sport competition or self-defense.</li>
+        <li><strong>Comprehensive Grappling:</strong> BJJ covers takedowns, ground control, and submissions — more versatile than striking-based arts, which often leave practitioners vulnerable in close-quarters combat.</li>
+      </ul>
+
+      <h2>The Impact of Brazilian Jiu-Jitsu</h2>
+      <p>Beyond its efficiency as a fighting technique, BJJ has a profound impact on the lives of its practitioners. It promotes physical fitness, mental resilience, and emotional well-being. The art's emphasis on problem-solving and adaptability fosters a growth mindset, helping practitioners navigate challenges both on and off the mat.</p>
+      <p>Moreover, BJJ's inclusive nature has made it a global phenomenon. Schools and academies around the world welcome people from all walks of life, creating diverse communities united by a shared passion for the art.</p>
+
+      <h2>Final Thoughts</h2>
+      <p>Brazilian Jiu-Jitsu stands out as a martial art that embodies the principle of efficiency through technique and strategy. Its rich history, rooted in the adaptation and innovation of the Gracie family, has paved the way for its global recognition. As the gentle art, BJJ emphasizes control, leverage, and respect — making it not only a practical self-defense system but also a transformative practice for individuals seeking growth and empowerment.</p>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="art-footer">
+      <div class="art-footer-inner">
+        <div>
+          <a class="art-footer-logo" href="index.html">KnowSci</a>
+          <div class="art-footer-socials">
+            <a href="https://www.linkedin.com/in/juan-jose-gomez-vanolli-09b674143?original_referer=" target="_blank"><img src="images/icon1.png" alt="LinkedIn" /></a>
+            <a href="https://www.instagram.com/knowledgescience/" target="_blank"><img src="images/icon2.png" alt="Instagram" /></a>
+            <a href="https://www.youtube.com/@JOTEXful" target="_blank"><img src="images/icon3.png" alt="YouTube" /></a>
+            <a href="https://twitter.com/jotexGOMEZ?" target="_blank"><img src="images/icon4.png" alt="Twitter" /></a>
+          </div>
+        </div>
+        <p class="art-footer-quote">
+          "Nobody ever figures out what life is all about, and it doesn't matter.<br>
+          Explore the world. Nearly everything is really interesting if you go into it deeply enough."<br>
+          ― Richard P. Feynman
+        </p>
+      </div>
+    </footer>
+
+  </body>
+</html>
