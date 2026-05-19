@@ -39,7 +39,7 @@ body {
 .cv-hero {
   background-color: var(--dark);
   background-image:
-    linear-gradient(to right, rgba(9,9,15,0.80) 0%, rgba(9,9,15,0.52) 50%, rgba(9,9,15,0.28) 100%),
+    linear-gradient(to right, rgba(9,9,15,0.88) 0%, rgba(9,9,15,0.68) 50%, rgba(9,9,15,0.48) 100%),
     url("../images/BannerCV_port.jpg");
   background-size: cover;
   background-position: center 68%;
