@@ -1,105 +1,319 @@
+/* ═══════════════════════════════════════════
+   ISS LIVE TRACKER
+   ═══════════════════════════════════════════ */
+
+:root {
+  --dark:   #06080f;
+  --light:  #f4f5f8;
+  --white:  #ffffff;
+  --blue:   #0ea5e9;
+  --blue-2: #0284c7;
+  --text:   #0f172a;
+  --text-2: #64748b;
+  --border: #e2e8f0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background-color: rgb(223, 223, 223);
+  font-family: "Inter", -apple-system, sans-serif;
+  background: var(--light);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Reduce space between content and map */
-.content-container {
-  margin-bottom: 20px;
+/* ═══════════════════════════════════════════
+   VIEWPORT MAP SECTION
+   ═══════════════════════════════════════════ */
+.iss-viewport {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  background: var(--dark);
 }
 
-.content-body {
-  margin-bottom: 20px;
+/* ─── Leaflet map — fills viewport ──────── */
+#iss-map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
-/* Add space before footer */
-.content-container:last-of-type {
-  margin-bottom: 50px;
+/* ─── Nav ──────────────────────────────── */
+.iss-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 6%;
+  background: linear-gradient(to bottom, rgba(6,8,15,0.72) 0%, transparent 100%);
 }
 
-hr {
-  border-style: none;
-  width: 3%;
-  border-color: rgb(0, 0, 0);
-  border-top-style: dotted;
-  border-width: 7px;
-  margin: 20px auto 70px auto;
+.iss-nav-logo {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
 }
 
-/* ISS Map Container */
-.iss-map-container {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 20px 5%;
+.iss-nav-back {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.iss-nav-back:hover { color: white; }
+
+/* ─── Hero title overlay (top-left) ─────── */
+.iss-overlay-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 110px 6% 0;
+  pointer-events: none;
+}
+
+.iss-eyebrow {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 14px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+}
+
+.iss-hero-title {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 0.94;
+  color: white;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.55);
+}
+
+/* ─── HUD bar (bottom of map) ────────────── */
+.iss-hud {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 6%;
+  background: linear-gradient(to top, rgba(6,8,15,0.82) 0%, transparent 100%);
+}
+
+.iss-hud-live {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  background: rgba(14,165,233,0.12);
+  border: 1px solid rgba(14,165,233,0.28);
+  padding: 6px 12px;
+  border-radius: 100px;
+  flex-shrink: 0;
+}
+
+.iss-hud-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blue);
+  animation: hudPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes hudPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
 }
 
 .map-title {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 2rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: rgb(109, 2, 159);
-  text-align: center;
-  margin-bottom: 30px;
+  color: rgba(255,255,255,0.78);
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
 }
 
-#iss-map {
-  height: 500px;
-  width: 100%;
-  border-radius: 10px;
-  border: 2px solid rgb(109, 2, 159);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* ISS Map Icon Styling */
+/* ISS icon glow */
 .iss-map-icon {
   background: transparent !important;
   border: none !important;
 }
 
 .iss-map-icon img {
-  filter: drop-shadow(0 0 8px rgba(109, 2, 159, 0.6));
-  animation: pulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(14,165,233,0.65));
+  animation: issPulse 2s ease-in-out infinite;
 }
 
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.9;
-  }
+@keyframes issPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.1); opacity: 0.9; }
 }
 
-/* Responsive Design */
+/* ═══════════════════════════════════════════
+   INFO SECTION
+   ═══════════════════════════════════════════ */
+.iss-info {
+  background: var(--light);
+  padding: 72px 0 80px;
+}
+
+.iss-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 6%;
+}
+
+.iss-info-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 60px;
+}
+
+.iss-eyebrow-dark {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+.iss-info-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.iss-info-text {
+  font-size: 0.925rem;
+  line-height: 1.82;
+  color: #475569;
+  max-width: 520px;
+  margin-bottom: 12px;
+}
+
+.iss-info-api code {
+  font-size: 0.78rem;
+  color: var(--blue);
+  background: rgba(14,165,233,0.07);
+  border: 1px solid rgba(14,165,233,0.18);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-family: "SF Mono", "Fira Mono", monospace;
+  word-break: break-all;
+}
+
+.iss-tech-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.iss-tech-pills span {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 100px;
+  background: rgba(14,165,233,0.07);
+  border: 1px solid rgba(14,165,233,0.18);
+  color: var(--blue);
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+.iss-footer {
+  background: var(--dark);
+  padding: 52px 0;
+}
+
+.iss-footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+}
+
+.iss-footer-logo {
+  display: block;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.iss-footer-socials { display: flex; gap: 12px; }
+.iss-footer-socials a img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.45;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.2s;
+}
+.iss-footer-socials a:hover img { opacity: 1; }
+
+.iss-footer-quote {
+  font-size: 0.82rem;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.32);
+  font-style: italic;
+  max-width: 420px;
+  text-align: right;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
 @media (max-width: 768px) {
-  .map-title {
-    font-size: 1.2rem;
-  }
+  .iss-viewport { height: 100svh; }
+  .iss-nav { padding: 20px 5%; }
+  .iss-overlay-top { padding: 88px 5% 0; }
+  .iss-hero-title { font-size: 3rem; }
+  .iss-hud { padding: 16px 5%; gap: 14px; }
+  .map-title { font-size: 0.8rem; }
+  .iss-wrap { padding: 0 5%; }
+  .iss-info-grid { grid-template-columns: 1fr; gap: 32px; }
+  .iss-tech-pills { flex-direction: row; flex-wrap: wrap; }
+  .iss-footer-inner { flex-direction: column; gap: 28px; padding: 0 5%; }
+  .iss-footer-quote { text-align: left; }
+}
 
-  #iss-map {
-    height: 400px;
-  }
-
-  .iss-map-container {
-    padding: 30px 3%;
-  }
-
-  /* Adjust content container for mobile */
-  .content-container {
-    margin: 5% 3% 8% 3% !important;
-    padding: 0 5% !important;
-  }
-
-  .content-body {
-    font-size: 16px !important;
-    line-height: 1.5 !important;
-    margin-bottom: 20px !important;
-  }
-
-  #page-title {
-    font-size: 2.5rem !important;
-    padding-left: 5% !important;
-  }
+@media (max-width: 480px) {
+  .iss-hero-title { font-size: 2.5rem; }
+  .iss-hud { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .map-title { font-size: 0.75rem; }
 }

@@ -1,250 +1,466 @@
+/* ═══════════════════════════════════════════
+   NASA NEO RANKING
+   ═══════════════════════════════════════════ */
+
+:root {
+  --dark:    #060608;
+  --light:   #f4f5f8;
+  --white:   #ffffff;
+  --amber:   #f97316;
+  --amber-2: #ea580c;
+  --text:    #0f172a;
+  --text-2:  #64748b;
+  --border:  #e2e8f0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background-color: rgb(223, 223, 223);
+  font-family: "Inter", -apple-system, sans-serif;
+  background: var(--light);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
 }
 
-.bold-title {
-  font-weight: bold;
+/* ═══════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════ */
+.neo-hero {
+  position: relative;
+  background: var(--dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-hr {
-  border-style: none;
-  width: 3%;
-  border-color: rgb(0, 0, 0);
-  border-top-style: dotted;
-  border-width: 7px;
-  margin: 20px auto 70px auto;
+/* ─── Star field ────────────────────────── */
+.neo-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at  8% 12%, rgba(255,255,255,0.65) 0%, transparent 100%),
+    radial-gradient(1px 1px at 23% 38%, rgba(255,255,255,0.42) 0%, transparent 100%),
+    radial-gradient(1px 1px at 41% 68%, rgba(255,255,255,0.72) 0%, transparent 100%),
+    radial-gradient(1px 1px at 54% 18%, rgba(255,255,255,0.50) 0%, transparent 100%),
+    radial-gradient(1px 1px at 69% 53%, rgba(255,255,255,0.60) 0%, transparent 100%),
+    radial-gradient(1px 1px at 84% 28%, rgba(255,255,255,0.40) 0%, transparent 100%),
+    radial-gradient(1px 1px at 14% 79%, rgba(255,255,255,0.50) 0%, transparent 100%),
+    radial-gradient(1px 1px at 49%  9%, rgba(255,255,255,0.80) 0%, transparent 100%),
+    radial-gradient(1px 1px at 91% 74%, rgba(255,255,255,0.42) 0%, transparent 100%),
+    radial-gradient(1px 1px at 32% 91%, rgba(255,255,255,0.60) 0%, transparent 100%),
+    radial-gradient(1px 1px at 77% 87%, rgba(255,255,255,0.50) 0%, transparent 100%),
+    radial-gradient(2px 2px at 61% 44%, rgba(249,115,22,0.45)  0%, transparent 100%),
+    radial-gradient(2px 2px at 17% 54%, rgba(249,115,22,0.32)  0%, transparent 100%),
+    radial-gradient(ellipse 72% 62% at 92%  8%, rgba(249,115,22,0.08) 0%, transparent 65%),
+    radial-gradient(ellipse 58% 46% at  4% 97%, rgba(124,58,237,0.06) 0%, transparent 62%);
 }
 
-.page1 {
-  text-align: center;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 5%;
+.neo-stars-2 {
+  background-image:
+    radial-gradient(1px 1px at  4%  6%, rgba(255,255,255,0.50) 0%, transparent 100%),
+    radial-gradient(1px 1px at 19% 24%, rgba(255,255,255,0.32) 0%, transparent 100%),
+    radial-gradient(1px 1px at 34% 49%, rgba(255,255,255,0.62) 0%, transparent 100%),
+    radial-gradient(1px 1px at 47% 84%, rgba(255,255,255,0.42) 0%, transparent 100%),
+    radial-gradient(1px 1px at 64% 34%, rgba(255,255,255,0.72) 0%, transparent 100%),
+    radial-gradient(1px 1px at 79% 64%, rgba(255,255,255,0.52) 0%, transparent 100%),
+    radial-gradient(1px 1px at 94% 14%, rgba(255,255,255,0.42) 0%, transparent 100%),
+    radial-gradient(1px 1px at 43% 29%, rgba(255,255,255,0.62) 0%, transparent 100%),
+    radial-gradient(1px 1px at 57% 93%, rgba(255,255,255,0.32) 0%, transparent 100%),
+    radial-gradient(1px 1px at 87% 47%, rgba(255,255,255,0.52) 0%, transparent 100%),
+    radial-gradient(2px 2px at 74% 11%, rgba(255,255,255,0.80) 0%, transparent 100%),
+    radial-gradient(2px 2px at 29% 67%, rgba(249,115,22,0.38)  0%, transparent 100%);
 }
 
-.mainTitle {
-  margin-top: 4%;
-  margin-bottom: 2%;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: rgb(109, 2, 159);
+/* ─── Nav ──────────────────────────────── */
+.neo-nav {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 8%;
+  flex-shrink: 0;
 }
 
-.tileContainer {
-  margin-bottom: 3%;
-}
-
-.tileObject {
-  height: 330px;
-  width: 350px;
-  background-color: rgb(221, 221, 221);
-  display: inline-block;
-  margin: 2% 2%;
-  border-color: black;
-  border: 0.2rem solid;
-  border-radius: 0.5rem;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-.dateForm {
-  margin-bottom: 2%;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-.dateForm label {
-  font-size: 1.1rem;
-  margin-right: 10px;
-  color: #333;
-}
-
-.dateForm input {
-  padding: 8px 12px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-right: 10px;
-}
-
-.dateForm button {
-  padding: 8px 20px;
-  font-size: 1rem;
-  background-color: rgb(109, 2, 159);
+.neo-nav-logo {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
   color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  text-decoration: none;
 }
 
-.dateForm button:hover {
-  background-color: rgb(37, 15, 159);
+.neo-nav-back {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.50);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.neo-nav-back:hover { color: white; }
+
+/* ─── Hero body ─────────────────────────── */
+.neo-hero-body {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 8% 90px;
+  max-width: 720px;
 }
 
-/* Seccion de Tiles en tileContainer */
-
-.tile_main_title {
-  font-size: 1.6rem;
-  margin-top: 7%;
-  margin-bottom: 10%;
+.neo-eyebrow {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 18px;
 }
 
-.tile_first_title {
+.neo-hero-title {
+  font-size: clamp(3.2rem, 8.5vw, 6.5rem);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 0.93;
+  color: white;
+  margin-bottom: 26px;
+}
+
+.neo-hero-sub {
   font-size: 1rem;
-  text-align: left;
-  margin-top: 8px;
-  padding-left: 5%;
+  font-weight: 400;
+  color: rgba(255,255,255,0.50);
+  line-height: 1.72;
+  max-width: 460px;
+  margin-bottom: 44px;
 }
 
-.tile_second_title {
+/* ─── Search form ───────────────────────── */
+.neo-search-form { width: 100%; max-width: 500px; }
+
+.neo-search-wrap {
+  display: flex;
+  border: 1.5px solid rgba(249,115,22,0.38);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(10px);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.neo-search-wrap:focus-within {
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px rgba(249,115,22,0.14);
+}
+
+.neo-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 16px 20px;
   font-size: 0.9rem;
-  text-align: left;
-  margin-top: 20%;
-  padding-left: 5%;
+  font-family: "Inter", sans-serif;
+  color: white;
+  font-weight: 500;
+}
+.neo-search-input::placeholder { color: rgba(255,255,255,0.28); }
+
+.neo-search-btn {
+  background: var(--amber);
+  border: none;
+  padding: 0 30px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: white;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.neo-search-btn:hover { background: var(--amber-2); }
+
+/* ═══════════════════════════════════════════
+   MAIN RESULTS
+   ═══════════════════════════════════════════ */
+.neo-main {
+  background: var(--light);
+  padding: 64px 0 80px;
 }
 
-.mainObjectContainer {
-  max-width: 58rem;
-  width: 100%;
-  height: 430px;
-  border-color: black;
-  border: 0.2rem solid;
-  border-radius: 0.5rem;
-  margin: 4% auto;
-  background-color: rgb(216, 216, 216);
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+.neo-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 6%;
 }
 
-/* Seccion de Titulos en mainObjectContainer */
-
-.containerMainTitle {
-  font-size: 2rem;
-  margin-top: 3%;
-  margin-bottom: 0.6%;
+/* ─── Featured #1 card ──────────────────── */
+.neo-featured-card {
+  background: var(--white);
+  border: 1.5px solid rgba(249,115,22,0.22);
+  border-radius: 18px;
+  padding: 36px 40px;
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+  box-shadow: 0 8px 32px rgba(249,115,22,0.07);
+  margin-bottom: 24px;
+  transition: box-shadow 0.3s;
+}
+.neo-featured-card:hover {
+  box-shadow: 0 0 0 3px rgba(249,115,22,0.10), 0 12px 40px rgba(249,115,22,0.10);
 }
 
-.left_data_title {
-  text-align: left;
-  font-size: 1.2rem;
-  margin-top: 17%;
-  line-height: 40px;
+.neo-featured-rank {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+  padding-top: 4px;
 }
 
-.right_data_title {
-  text-align: left;
-  font-size: 1.2rem;
-  margin-top: 6.5%;
-  line-height: 40px;
+.neo-rank-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(249,115,22,0.55);
 }
 
-.leftSection {
-  width: 19rem;
-  margin-left: 3%;
+.neo-rank-num {
+  font-size: 3.8rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--amber);
 }
 
-.main_container_1st_title {
+.neo-featured-content { flex: 1; min-width: 0; }
+
+.neo-featured-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.neo-featured-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 36px;
+}
+
+.neo-data-block { display: flex; flex-direction: column; gap: 5px; }
+.neo-data-block-full { grid-column: span 2; }
+
+.neo-data-label {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+
+.neo-data-value {
   font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  word-break: break-word;
 }
 
-.main_container_2nd_title {
-  font-size: 1.05rem;
+/* ─── Rankings 2–5 ──────────────────────── */
+.neo-rankings {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
 }
 
-.main_container_3rd_title {
-  font-size: 1.05rem;
+.neo-rank-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 18px;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.neo-rank-card:hover {
+  border-color: rgba(249,115,22,0.28);
+  box-shadow: 0 6px 24px rgba(249,115,22,0.08);
+  transform: translateY(-2px);
 }
 
-.main_container_4th_title {
-  font-size: 1.05rem;
+.neo-rank-badge {
+  display: inline-block;
+  font-size: 0.70rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber);
+  background: rgba(249,115,22,0.08);
+  border: 1px solid rgba(249,115,22,0.20);
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-bottom: 14px;
 }
 
-.main_container_5th_title {
-  font-size: 1.05rem;
+.neo-rank-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.35;
+  margin-bottom: 10px;
+  min-height: 1.2em;
+  word-break: break-word;
 }
 
-/* Responsive Design */
+.neo-rank-meta {
+  font-size: 0.78rem;
+  color: var(--text-2);
+  font-weight: 500;
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+/* ═══════════════════════════════════════════
+   ABOUT
+   ═══════════════════════════════════════════ */
+.neo-about {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 60px 0;
+}
+
+.neo-about-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 60px;
+}
+
+.neo-eyebrow-dark {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 10px;
+}
+
+.neo-about-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.neo-about-text {
+  font-size: 0.925rem;
+  line-height: 1.82;
+  color: #475569;
+  max-width: 520px;
+}
+
+.neo-tech-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.neo-tech-pills span {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 100px;
+  background: rgba(249,115,22,0.07);
+  border: 1px solid rgba(249,115,22,0.18);
+  color: var(--amber);
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+.neo-footer {
+  background: var(--dark);
+  padding: 52px 0;
+}
+
+.neo-footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+}
+
+.neo-footer-logo {
+  display: block;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.neo-footer-socials { display: flex; gap: 12px; }
+.neo-footer-socials a img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.45;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.2s;
+}
+.neo-footer-socials a:hover img { opacity: 1; }
+
+.neo-footer-quote {
+  font-size: 0.82rem;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.32);
+  font-style: italic;
+  max-width: 420px;
+  text-align: right;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .neo-rankings { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 768px) {
-  /* Adjust content container for mobile */
-  .content-container {
-    margin: 5% 3% 8% 3% !important;
-    padding: 0 5% !important;
-  }
+  .neo-hero-body { padding: 40px 5% 60px; }
+  .neo-nav { padding: 22px 5%; }
+  .neo-wrap { padding: 0 5%; }
+  .neo-featured-card { flex-direction: column; gap: 16px; padding: 24px 20px; }
+  .neo-rank-num { font-size: 2.6rem; }
+  .neo-about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .neo-tech-pills { flex-direction: row; flex-wrap: wrap; }
+  .neo-footer-inner { flex-direction: column; gap: 28px; padding: 0 5%; }
+  .neo-footer-quote { text-align: left; }
+}
 
-  .content-body {
-    font-size: 16px !important;
-    line-height: 1.5 !important;
-    margin-bottom: 20px !important;
-  }
-
-  #page-title {
-    font-size: 2.5rem !important;
-    padding-left: 5% !important;
-  }
-
-  .page1 {
-    padding: 0 3% !important;
-  }
-
-  .mainTitle {
-    font-size: 1.8rem !important;
-  }
-
-  .mainObjectContainer {
-    max-width: 100% !important;
-    width: 95% !important;
-    margin: 4% auto !important;
-    height: auto !important;
-    min-height: 300px !important;
-  }
-
-  .containerMainTitle {
-    font-size: 1.5rem !important;
-  }
-
-  .left_data_title,
-  .right_data_title {
-    font-size: 1rem !important;
-    line-height: 30px !important;
-    margin-top: 10% !important;
-  }
-
-  .tileObject {
-    width: 90% !important;
-    max-width: 350px !important;
-    margin: 2% auto !important;
-    display: block !important;
-    height: auto !important;
-    min-height: 250px !important;
-  }
-
-  .tile_main_title {
-    font-size: 1.3rem !important;
-  }
-
-  .tile_first_title,
-  .tile_second_title {
-    font-size: 0.9rem !important;
-  }
-
-  .dateForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .dateForm label {
-    font-size: 1rem;
-  }
-
-  .dateForm input {
-    width: 80%;
-    max-width: 300px;
-  }
-
-  .dateForm button {
-    width: 80%;
-    max-width: 300px;
-  }
+@media (max-width: 540px) {
+  .neo-hero-title { font-size: 3rem; }
+  .neo-rankings { grid-template-columns: 1fr; }
+  .neo-featured-grid { grid-template-columns: 1fr; }
+  .neo-data-block-full { grid-column: span 1; }
 }
