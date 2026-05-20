@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What are Neutron Stars — KnowSci</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --dark:    #09090f;
+        --light:   #f4f5f8;
+        --white:   #ffffff;
+        --accent:  #7c3aed;
+        --text:    #0f172a;
+        --text-2:  #475569;
+        --border:  #e2e8f0;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: "Inter", -apple-system, sans-serif;
+        background: var(--light);
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── Nav ── */
+      .art-nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--dark);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 6%;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .art-nav-logo {
+        font-family: "Ubuntu", sans-serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+      }
+
+      .art-nav-back {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: rgba(255,255,255,0.50);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .art-nav-back:hover { color: white; }
+
+      /* ── Hero ── */
+      .art-hero {
+        position: relative;
+        height: 480px;
+        overflow: hidden;
+      }
+
+      .art-hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 40%;
+        display: block;
+      }
+
+      .art-hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(9,9,15,0.90) 0%, rgba(9,9,15,0.35) 55%, transparent 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 48px 8%;
+      }
+
+      .art-hero-tag {
+        display: inline-block;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #a78bfa;
+        margin-bottom: 14px;
+      }
+
+      .art-hero-title {
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        line-height: 1.05;
+        color: white;
+        max-width: 700px;
+        margin-bottom: 16px;
+      }
+
+      /* ── Article body ── */
+      .art-body {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 64px 6% 100px;
+      }
+
+      .art-body p {
+        font-size: 1.05rem;
+        line-height: 1.82;
+        color: var(--text-2);
+        margin-bottom: 24px;
+      }
+
+      .art-body h2 {
+        font-size: 1.35rem;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        color: var(--text);
+        margin: 48px 0 16px;
+        padding-top: 8px;
+        border-top: 2px solid var(--border);
+      }
+
+      .art-body ul {
+        margin: 0 0 24px 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .art-body ul li {
+        display: flex;
+        gap: 14px;
+        font-size: 1.05rem;
+        line-height: 1.75;
+        color: var(--text-2);
+      }
+
+      .art-body ul li::before {
+        content: '—';
+        color: var(--accent);
+        font-weight: 700;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .art-body ul li strong {
+        color: var(--text);
+      }
+
+      /* ── Inline figures ── */
+      .art-figure {
+        margin: 36px 0 40px;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+      }
+
+      .art-figure img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        max-height: 480px;
+      }
+
+      .art-figure figcaption {
+        font-size: 0.75rem;
+        color: var(--text-2);
+        line-height: 1.6;
+        padding: 12px 16px;
+        background: var(--white);
+        border-top: 1px solid var(--border);
+        font-style: italic;
+      }
+
+      /* ── Footer ── */
+      .art-footer {
+        background: var(--dark);
+        padding: 52px 0;
+      }
+
+      .art-footer-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 6%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 48px;
+      }
+
+      .art-footer-logo {
+        display: block;
+        font-family: "Ubuntu", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 16px;
+        text-decoration: none;
+      }
+
+      .art-footer-socials { display: flex; gap: 12px; }
+      .art-footer-socials a img {
+        width: 20px; height: 20px;
+        opacity: 0.45;
+        filter: brightness(0) invert(1);
+        transition: opacity 0.2s;
+      }
+      .art-footer-socials a:hover img { opacity: 1; }
+
+      .art-footer-quote {
+        font-size: 0.82rem;
+        line-height: 1.9;
+        color: rgba(255,255,255,0.32);
+        font-style: italic;
+        max-width: 420px;
+        text-align: right;
+      }
+
+      @media (max-width: 768px) {
+        .art-hero { height: 360px; }
+        .art-hero-overlay { padding: 36px 5%; }
+        .art-body { padding: 48px 5% 72px; }
+        .art-footer-inner { flex-direction: column; gap: 28px; padding: 0 5%; }
+        .art-footer-quote { text-align: left; }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Nav -->
+    <nav class="art-nav">
+      <a class="art-nav-logo" href="index.html">KnowSci</a>
+      <a class="art-nav-back" href="ResearchBlog.html">← The Blog</a>
+    </nav>
+
+    <!-- Hero -->
+    <div class="art-hero">
+      <img src="images/Res3.PNG" alt="Neutron Stars" />
+      <div class="art-hero-overlay">
+        <span class="art-hero-tag">Astronomy &nbsp;·&nbsp; March 10, 2024 &nbsp;·&nbsp; 6 min read</span>
+        <h1 class="art-hero-title">What are<br>Neutron Stars</h1>
+      </div>
+    </div>
+
+    <!-- Article -->
+    <article class="art-body">
+
+      <h2>Introduction</h2>
+      <p>Imagine a cosmic phenomenon so incredible that it challenges the boundaries of our understanding of space and physics. Deep within the heart of a massive star, a remarkable transformation takes place when its nuclear fuel runs out. This celestial event gives birth to one of the most fascinating and enigmatic objects in the universe — neutron stars. Neutron stars are like the stellar skeletons left behind after a supernova, and they possess mind-boggling properties that boggle the human imagination.</p>
+
+      <h2>What Is a Neutron Star?</h2>
+      <p>Neutron stars are the remnants of massive stars that have exhausted their nuclear fuel and undergone a cataclysmic explosion known as a supernova. When a star several times more massive than our Sun runs out of fuel, its core collapses under the force of gravity, packing an astonishing amount of mass into a tiny volume. Imagine compressing the entire Earth into a sugar cube — that is the level of density we are talking about. In fact, neutron stars are so dense that a teaspoon of their material would weigh as much as a mountain on Earth.</p>
+      <p>These exotic objects are composed almost entirely of neutrons, the subatomic particles found in the nucleus of an atom. Under intense gravitational pressure, electrons are forced to combine with protons, creating neutrons and forming a dense core. Neutron stars are incredibly small compared to their parent stars, typically only about 10 to 20 kilometers (6 to 12 miles) in diameter. Despite their small size, they possess immense gravitational forces capable of bending and distorting the very fabric of spacetime around them.</p>
+
+      <h2>Rapid Rotation and Pulsars</h2>
+      <p>One of the most remarkable characteristics of neutron stars is their rapid rotation. When the original star collapses, conservation of angular momentum causes the neutron star to spin at incredibly high speeds. Some neutron stars can complete hundreds of rotations per second. This rapid spinning generates powerful magnetic fields that are trillions of times stronger than Earth's magnetic field.</p>
+      <p>These magnetic fields can unleash energetic bursts of radiation, observed as <strong>pulsars</strong> — beams of electromagnetic radiation that appear to pulse as they sweep across our line of sight, much like a cosmic lighthouse. Pulsars are so precise in their timing that astronomers use them as natural clocks to test the predictions of general relativity.</p>
+
+      <figure class="art-figure">
+        <img src="images/NeutronStar.png" alt="Illustration of a neutron star" />
+        <figcaption>Artistic representation of a neutron star and its powerful magnetic field lines, which funnel radiation into narrow beams observed as pulsars from Earth.</figcaption>
+      </figure>
+
+      <h2>Key Properties at a Glance</h2>
+      <ul>
+        <li><strong>Extreme density:</strong> A teaspoon of neutron star material weighs roughly a billion tons — more than all of humanity combined.</li>
+        <li><strong>Tiny diameter:</strong> Despite containing more mass than the Sun, a neutron star is typically only 10–20 km across.</li>
+        <li><strong>Intense gravity:</strong> Surface gravity is roughly 200 billion times that of Earth, enough to warp spacetime around them.</li>
+        <li><strong>Staggering rotation:</strong> Some millisecond pulsars spin over 700 times per second, making them the fastest-rotating objects known.</li>
+        <li><strong>Colossal magnetic fields:</strong> The strongest magnetars have fields trillions of times more powerful than any magnet on Earth.</li>
+      </ul>
+
+      <h2>Why Neutron Stars Matter</h2>
+      <p>Neutron stars sit at the frontier of physics. They are natural laboratories for studying matter under conditions far beyond what any experiment on Earth could replicate. The 2017 detection of gravitational waves from two merging neutron stars — accompanied by a gamma-ray burst observed simultaneously — opened an entirely new era of multi-messenger astronomy, confirming that collisions between neutron stars are responsible for forging heavy elements like gold and platinum that exist throughout the universe.</p>
+      <p>Every piece of gold jewelry, every platinum catalyst, and every iodine atom in your body was likely forged in the violent merger of two neutron stars billions of years ago. In studying these objects, we are not just exploring the extremes of space — we are tracing the origins of the matter that makes up our world.</p>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="art-footer">
+      <div class="art-footer-inner">
+        <div>
+          <a class="art-footer-logo" href="index.html">KnowSci</a>
+          <div class="art-footer-socials">
+            <a href="https://www.linkedin.com/in/juan-jose-gomez-vanolli-09b674143?original_referer=" target="_blank"><img src="images/icon1.png" alt="LinkedIn" /></a>
+            <a href="https://www.instagram.com/knowledgescience/" target="_blank"><img src="images/icon2.png" alt="Instagram" /></a>
+            <a href="https://www.youtube.com/@JOTEXful" target="_blank"><img src="images/icon3.png" alt="YouTube" /></a>
+            <a href="https://twitter.com/jotexGOMEZ?" target="_blank"><img src="images/icon4.png" alt="Twitter" /></a>
+          </div>
+        </div>
+        <p class="art-footer-quote">
+          "Nobody ever figures out what life is all about, and it doesn't matter.<br>
+          Explore the world. Nearly everything is really interesting if you go into it deeply enough."<br>
+          ― Richard P. Feynman
+        </p>
+      </div>
+    </footer>
+
+  </body>
+</html>

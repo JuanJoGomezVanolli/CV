@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blitzkrieg, a Brief Summary — KnowSci</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --dark:    #09090f;
+        --light:   #f4f5f8;
+        --white:   #ffffff;
+        --accent:  #7c3aed;
+        --text:    #0f172a;
+        --text-2:  #475569;
+        --border:  #e2e8f0;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: "Inter", -apple-system, sans-serif;
+        background: var(--light);
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── Nav ── */
+      .art-nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--dark);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 6%;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .art-nav-logo {
+        font-family: "Ubuntu", sans-serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+      }
+
+      .art-nav-back {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: rgba(255,255,255,0.50);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .art-nav-back:hover { color: white; }
+
+      /* ── Hero ── */
+      .art-hero {
+        position: relative;
+        height: 480px;
+        overflow: hidden;
+      }
+
+      .art-hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 40%;
+        display: block;
+      }
+
+      .art-hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(9,9,15,0.90) 0%, rgba(9,9,15,0.35) 55%, transparent 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 48px 8%;
+      }
+
+      .art-hero-tag {
+        display: inline-block;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #a78bfa;
+        margin-bottom: 14px;
+      }
+
+      .art-hero-title {
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        line-height: 1.05;
+        color: white;
+        max-width: 700px;
+        margin-bottom: 16px;
+      }
+
+      /* ── Article body ── */
+      .art-body {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 64px 6% 100px;
+      }
+
+      .art-body p {
+        font-size: 1.05rem;
+        line-height: 1.82;
+        color: var(--text-2);
+        margin-bottom: 24px;
+      }
+
+      .art-body h2 {
+        font-size: 1.35rem;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        color: var(--text);
+        margin: 48px 0 16px;
+        padding-top: 8px;
+        border-top: 2px solid var(--border);
+      }
+
+      .art-body ul {
+        margin: 0 0 24px 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .art-body ul li {
+        display: flex;
+        gap: 14px;
+        font-size: 1.05rem;
+        line-height: 1.75;
+        color: var(--text-2);
+      }
+
+      .art-body ul li::before {
+        content: '—';
+        color: var(--accent);
+        font-weight: 700;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .art-body ul li strong {
+        color: var(--text);
+      }
+
+      /* ── Inline images ── */
+      .art-figure {
+        margin: 36px 0 40px;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+      }
+
+      .art-figure img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        max-height: 420px;
+      }
+
+      .art-figure figcaption {
+        font-size: 0.75rem;
+        color: var(--text-2);
+        line-height: 1.6;
+        padding: 12px 16px;
+        background: var(--white);
+        border-top: 1px solid var(--border);
+        font-style: italic;
+      }
+
+      /* ── Footer ── */
+      .art-footer {
+        background: var(--dark);
+        padding: 52px 0;
+      }
+
+      .art-footer-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 6%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 48px;
+      }
+
+      .art-footer-logo {
+        display: block;
+        font-family: "Ubuntu", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 16px;
+        text-decoration: none;
+      }
+
+      .art-footer-socials { display: flex; gap: 12px; }
+      .art-footer-socials a img {
+        width: 20px; height: 20px;
+        opacity: 0.45;
+        filter: brightness(0) invert(1);
+        transition: opacity 0.2s;
+      }
+      .art-footer-socials a:hover img { opacity: 1; }
+
+      .art-footer-quote {
+        font-size: 0.82rem;
+        line-height: 1.9;
+        color: rgba(255,255,255,0.32);
+        font-style: italic;
+        max-width: 420px;
+        text-align: right;
+      }
+
+      @media (max-width: 768px) {
+        .art-hero { height: 360px; }
+        .art-hero-overlay { padding: 36px 5%; }
+        .art-body { padding: 48px 5% 72px; }
+        .art-footer-inner { flex-direction: column; gap: 28px; padding: 0 5%; }
+        .art-footer-quote { text-align: left; }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Nav -->
+    <nav class="art-nav">
+      <a class="art-nav-logo" href="index.html">KnowSci</a>
+      <a class="art-nav-back" href="ResearchBlog.html">← The Blog</a>
+    </nav>
+
+    <!-- Hero -->
+    <div class="art-hero">
+      <img src="images/Res1.PNG" alt="Blitzkrieg" />
+      <div class="art-hero-overlay">
+        <span class="art-hero-tag">History &nbsp;·&nbsp; March 5, 2024 &nbsp;·&nbsp; 5 min read</span>
+        <h1 class="art-hero-title">Blitzkrieg,<br>a Brief Summary</h1>
+      </div>
+    </div>
+
+    <!-- Article -->
+    <article class="art-body">
+
+      <h2>Introduction</h2>
+      <p>Nazi Germany was born from Adolf Hitler's political party, which appealed to the racist and fascist thoughts of the German people. Their goal was to eliminate enemies of the Third Reich, mainly Jews. Hitler started the Second World War in pursuit of rebuilding the great Germany and ending the Treaty of Versailles, which had insulted Germany in the First World War. During the 6 year campaign, Germany implemented a new innovative war tactic called Blitzkrieg, or Lightning War. This method consisted of the coordinated use of air, armored, and ground forces.</p>
+
+      <h2>How Blitzkrieg Was Born</h2>
+      <p>The ideas behind Blitzkrieg were generated during the First World War when all sides were attempting to come up with ways to break the trench deadlock. Reestablishing fast-moving warfare was important to Germany because the Versailles Treaty had limited the German army to a maximum of 100,000 men or 10 divisions, which was a small number compared to the French army's 85 divisions. They needed to come up with new ways to use their forces more efficiently, as they couldn't go back to the attrition of the first world war with limited manpower.</p>
+      <p>The German army sent various platoons to fight in the Spanish civil war and trained using cars with cardboard detailing to simulate tanks because they weren't allowed to have tanks. The most efficient idea was to upscale the training of each rank, so, for example, every NCO would be trained as an officer, and every junior officer was trained as a staff officer. This would build a small but powerful mobile army capable of adapting to different situations.</p>
+
+      <h2>How Blitzkrieg Works</h2>
+      <p>The concept behind Blitzkrieg is to win by not fighting. First, you identify the weak points in the enemy lines, quickly and relentlessly break through these lines, and finally disrupt the enemy's rear end. You are winning by dislocating the forces and not their destruction. However, don't be fooled by this remark. The Blitzkrieg advancement brings bloodbaths and destruction. For example, the city of Warsaw was devastated, and 90% of the buildings were destroyed.</p>
+
+      <figure class="art-figure">
+        <img src="images/warsawImg.jpg" alt="Section of Warsaw razed to the ground, c. 1950" />
+        <figcaption>Section of Warsaw razed to the ground, photo c. 1950. Northwest view of the Krasiński Gardens and Świętojerska Street. (Zbyszko Siemaszko, photographer of Central Photographic Agency (CAF) in Warsaw)</figcaption>
+      </figure>
+
+      <h2>Three Key Elements of a Successful Blitzkrieg</h2>
+      <ul>
+        <li>
+          <div>
+            <strong>Speed of Movement:</strong> The fundamental objective of Blitzkrieg is to keep moving without stopping. If you pause, you will become entangled in an attritional battle, giving the enemy an opportunity to regroup and respond to your attack. To maintain consistent forward momentum, you require good cover ahead of you. It is often thought that Germany had a very large army, but in reality, only about 15% of it was mechanized. As a result, the German army positioned its attacks in a spearhead formation, with the mechanized panzer forces leading the way. While the panzer forces blitzed through enemy lines, the Luftwaffe provided support with precision bombings, making it challenging for the enemy to react. Overall, the German army was weaker than its adversaries, but at the spearhead, they always managed to outperform their enemies.
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Speed of Decision Making:</strong> The primary goal of Blitzkrieg is to identify the weak point in the enemy line, apply mechanized pressure, and break through to the rear areas. To achieve this, you must be able to act flexibly, quickly, and change the focus of your attack without delay. Junior commanders were trained to make critical decisions in the heat of battle. For instance, if a platoon was ordered to attack a heavily fortified area but the flanks had weaker defenses, the platoon could quickly change its target, destroy alternative outposts, and continue advancing. Decisions were made within minutes, while the French command took days.
+          </div>
+        </li>
+        <li>
+          <div>
+            <strong>Overconfident Enemy:</strong> The Allied troops were trained to fight a static, ground-holding battle — similar to the First World War. They were not encouraged to innovate since they had won the previous war. This meant they were not investing in radio communications, relying instead on telephone lines. The German army only needed to break the lines, attack the rear, and sever communication — rendering army groups incommunicado, creating a sea of indecision and eventually paralyzing the enemy.
+          </div>
+        </li>
+      </ul>
+
+      <figure class="art-figure">
+        <img src="images/germanyAdvancement.png" alt="Map of German advancement through Belgium, Netherlands, and France" />
+        <figcaption>German forces' mobilization through Belgium, Netherlands, and France. Note the audacious distance covered after breaking through enemy lines — a campaign that saw the fall of fortifications believed by defenders to be impregnable.</figcaption>
+      </figure>
+
+      <p>As we can appreciate in the above map, you can see the specific mobilization that the German army executed through Belgium, the Netherlands, and France. Note how far German forces moved after crushing enemy lines. This campaign saw audacious applications of air power and airborne infantry to overcome fixed fortifications that were believed by the defenders to be impregnable.</p>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="art-footer">
+      <div class="art-footer-inner">
+        <div>
+          <a class="art-footer-logo" href="index.html">KnowSci</a>
+          <div class="art-footer-socials">
+            <a href="https://www.linkedin.com/in/juan-jose-gomez-vanolli-09b674143?original_referer=" target="_blank"><img src="images/icon1.png" alt="LinkedIn" /></a>
+            <a href="https://www.instagram.com/knowledgescience/" target="_blank"><img src="images/icon2.png" alt="Instagram" /></a>
+            <a href="https://www.youtube.com/@JOTEXful" target="_blank"><img src="images/icon3.png" alt="YouTube" /></a>
+            <a href="https://twitter.com/jotexGOMEZ?" target="_blank"><img src="images/icon4.png" alt="Twitter" /></a>
+          </div>
+        </div>
+        <p class="art-footer-quote">
+          "Nobody ever figures out what life is all about, and it doesn't matter.<br>
+          Explore the world. Nearly everything is really interesting if you go into it deeply enough."<br>
+          ― Richard P. Feynman
+        </p>
+      </div>
+    </footer>
+
+  </body>
+</html>
