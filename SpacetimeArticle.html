@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shape of Space and Time — KnowSci</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --dark:    #09090f;
+        --light:   #f4f5f8;
+        --white:   #ffffff;
+        --accent:  #7c3aed;
+        --text:    #0f172a;
+        --text-2:  #475569;
+        --border:  #e2e8f0;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: "Inter", -apple-system, sans-serif;
+        background: var(--light);
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── Nav ── */
+      .art-nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--dark);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 6%;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .art-nav-logo {
+        font-family: "Ubuntu", sans-serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+      }
+
+      .art-nav-back {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: rgba(255,255,255,0.50);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .art-nav-back:hover { color: white; }
+
+      /* ── Hero ── */
+      .art-hero {
+        position: relative;
+        height: 480px;
+        overflow: hidden;
+      }
+
+      .art-hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 40%;
+        display: block;
+      }
+
+      .art-hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(9,9,15,0.90) 0%, rgba(9,9,15,0.35) 55%, transparent 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 48px 8%;
+      }
+
+      .art-hero-tag {
+        display: inline-block;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #a78bfa;
+        margin-bottom: 14px;
+      }
+
+      .art-hero-title {
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        line-height: 1.05;
+        color: white;
+        max-width: 700px;
+        margin-bottom: 16px;
+      }
+
+      /* ── Article body ── */
+      .art-body {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 64px 6% 100px;
+      }
+
+      .art-body p {
+        font-size: 1.05rem;
+        line-height: 1.82;
+        color: var(--text-2);
+        margin-bottom: 24px;
+      }
+
+      .art-body h2 {
+        font-size: 1.35rem;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        color: var(--text);
+        margin: 48px 0 16px;
+        padding-top: 8px;
+        border-top: 2px solid var(--border);
+      }
+
+      .art-body ul {
+        margin: 0 0 24px 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .art-body ul li {
+        display: flex;
+        gap: 14px;
+        font-size: 1.05rem;
+        line-height: 1.75;
+        color: var(--text-2);
+      }
+
+      .art-body ul li::before {
+        content: '—';
+        color: var(--accent);
+        font-weight: 700;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .art-body ul li strong { color: var(--text); }
+
+      /* ── Footer ── */
+      .art-footer {
+        background: var(--dark);
+        padding: 52px 0;
+      }
+
+      .art-footer-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 6%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 48px;
+      }
+
+      .art-footer-logo {
+        display: block;
+        font-family: "Ubuntu", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 16px;
+        text-decoration: none;
+      }
+
+      .art-footer-socials { display: flex; gap: 12px; }
+      .art-footer-socials a img {
+        width: 20px; height: 20px;
+        opacity: 0.45;
+        filter: brightness(0) invert(1);
+        transition: opacity 0.2s;
+      }
+      .art-footer-socials a:hover img { opacity: 1; }
+
+      .art-footer-quote {
+        font-size: 0.82rem;
+        line-height: 1.9;
+        color: rgba(255,255,255,0.32);
+        font-style: italic;
+        max-width: 420px;
+        text-align: right;
+      }
+
+      @media (max-width: 768px) {
+        .art-hero { height: 360px; }
+        .art-hero-overlay { padding: 36px 5%; }
+        .art-body { padding: 48px 5% 72px; }
+        .art-footer-inner { flex-direction: column; gap: 28px; padding: 0 5%; }
+        .art-footer-quote { text-align: left; }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Nav -->
+    <nav class="art-nav">
+      <a class="art-nav-logo" href="index.html">KnowSci</a>
+      <a class="art-nav-back" href="ResearchBlog.html">← The Blog</a>
+    </nav>
+
+    <!-- Hero -->
+    <div class="art-hero">
+      <img src="images/Res2.PNG" alt="Shape of Space and Time" />
+      <div class="art-hero-overlay">
+        <span class="art-hero-tag">Physics &nbsp;·&nbsp; February 28, 2024 &nbsp;·&nbsp; 7 min read</span>
+        <h1 class="art-hero-title">Shape of<br>Space and Time</h1>
+      </div>
+    </div>
+
+    <!-- Article -->
+    <article class="art-body">
+
+      <h2>Introduction</h2>
+      <p>Most of us grow up picturing space as an empty, unchanging stage — a vast black backdrop against which planets, stars, and galaxies play out their lives. Time, in turn, feels like a river flowing at the same steady rate for everyone, everywhere. For centuries, this was the working assumption of science, codified by Isaac Newton into laws of motion and gravity that seemed to explain everything from falling apples to orbiting moons. Then, in 1915, Albert Einstein turned that picture completely upside down.</p>
+      <p>Einstein's General Theory of Relativity revealed that space and time are not fixed and separate — they are woven together into a single, flexible fabric called <strong>spacetime</strong>, and that fabric is shaped by everything that exists within it. Mass and energy do not simply sit inside space. They curve it. And that curvature is what we experience as gravity.</p>
+
+      <h2>What Is Spacetime?</h2>
+      <p>Before Einstein, Newton's physics treated space as three-dimensional — length, width, and height — and time as a completely independent quantity, ticking along uniformly for every observer in the universe. Einstein's earlier Special Theory of Relativity (1905) challenged this by showing that measurements of space and time depend on the relative motion between observers. Someone moving very fast relative to you will measure time passing more slowly and lengths contracting in their direction of travel.</p>
+      <p>General Relativity extended this insight further: space and time are not merely connected by measurement — they form a unified four-dimensional continuum. Every event in the universe has a location in space and a moment in time, and together these coordinates map out the geometry of spacetime. What makes this geometry remarkable is that it is not rigid. It bends, stretches, and curves in response to the presence of mass and energy — and it is those curves that govern how objects move.</p>
+
+      <h2>Einstein's Key Insight: Gravity as Geometry</h2>
+      <p>In Newton's framework, gravity was a force — an invisible pull reaching across empty space between two masses. Einstein replaced this picture with something far more elegant. Rather than pulling on objects, a massive body like the Sun warps the spacetime around it, much like a heavy bowling ball placed on a stretched rubber sheet creates a depression. Other objects — planets, light, anything — then follow the curves of that warped geometry. What looks like a force pulling a planet toward the Sun is really the planet following the straightest possible path, called a <strong>geodesic</strong>, through curved spacetime.</p>
+      <p>This reframing changes everything. Gravity is no longer a mysterious action at a distance. It is the geometry of the universe itself responding to matter — and matter responding to that geometry. As physicist John Wheeler famously summarised it: "Spacetime tells matter how to move; matter tells spacetime how to curve."</p>
+
+      <h2>Consequences of Curved Spacetime</h2>
+      <ul>
+        <li>
+          <div><strong>Gravitational lensing:</strong> Because mass curves spacetime, light passing near a massive object follows that curve and bends. This effect — gravitational lensing — allows astronomers to observe galaxies and quasars that would otherwise be hidden behind other objects, using the intervening mass as a natural telescope.</div>
+        </li>
+        <li>
+          <div><strong>Gravitational time dilation:</strong> Clocks run slower in stronger gravitational fields. A clock on the surface of the Earth ticks very slightly slower than one in orbit, where gravity is weaker. This is not a quirk of clock mechanics — time itself passes at different rates depending on how deep you are in a gravitational well.</div>
+        </li>
+        <li>
+          <div><strong>Black holes:</strong> If enough mass is compressed into a small enough region, spacetime curves so severely that not even light can escape. The boundary of no return is called the event horizon. Beyond it, spacetime itself is so distorted that all paths — for matter and radiation alike — lead inward.</div>
+        </li>
+        <li>
+          <div><strong>Gravitational waves:</strong> Accelerating masses create ripples in the curvature of spacetime that propagate outward at the speed of light. These gravitational waves carry energy away from their source and compress and stretch space as they pass — by amounts so tiny they went undetected for a century after Einstein predicted them.</div>
+        </li>
+      </ul>
+
+      <h2>Experimental Confirmations</h2>
+      <p>General Relativity made predictions that seemed almost impossible to test — and then experiments confirmed them one by one. The first landmark came in 1919, when British astronomer Arthur Eddington measured the positions of stars near the Sun during a solar eclipse. Their apparent positions were shifted exactly as Einstein's equations predicted, as light bent around the Sun's curved spacetime. The result made headlines worldwide and established Einstein as the most famous scientist alive.</p>
+      <p>A century later, the confirmations have grown astonishing in their precision. The GPS satellites that guide our navigation must correct for both the time dilation caused by their speed (Special Relativity) and the weaker gravity at their altitude (General Relativity) — without these corrections, GPS positions would drift by roughly 10 kilometres per day. In 2015, the LIGO detectors registered the first direct detection of gravitational waves from two merging black holes 1.3 billion light-years away, a signal that compressed and stretched the detectors by a distance smaller than one-thousandth the diameter of a proton. Einstein's century-old equations matched the signal almost perfectly.</p>
+
+      <h2>Why It Matters</h2>
+      <p>General Relativity is not just an abstract triumph of theoretical physics. It underpins our understanding of the Big Bang, the expansion of the universe, the life cycles of stars, and the existence of black holes — objects that were once dismissed as mathematical curiosities and are now known to anchor most large galaxies, including our own Milky Way. It is the framework cosmologists use to map the large-scale structure of the cosmos and probe its ultimate fate.</p>
+      <p>At the same time, it remains incomplete. General Relativity describes gravity magnificently at large scales, but it breaks down at the quantum level — the regime of atoms and subatomic particles. Reconciling it with quantum mechanics is the deepest unsolved problem in physics, a puzzle that has consumed generations of the brightest minds in science. The shape of spacetime, it turns out, is not just the answer to how gravity works. It is the frontier where our understanding of the universe reaches its current edge.</p>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="art-footer">
+      <div class="art-footer-inner">
+        <div>
+          <a class="art-footer-logo" href="index.html">KnowSci</a>
+          <div class="art-footer-socials">
+            <a href="https://www.linkedin.com/in/juan-jose-gomez-vanolli-09b674143?original_referer=" target="_blank"><img src="images/icon1.png" alt="LinkedIn" /></a>
+            <a href="https://www.instagram.com/knowledgescience/" target="_blank"><img src="images/icon2.png" alt="Instagram" /></a>
+            <a href="https://www.youtube.com/@JOTEXful" target="_blank"><img src="images/icon3.png" alt="YouTube" /></a>
+            <a href="https://twitter.com/jotexGOMEZ?" target="_blank"><img src="images/icon4.png" alt="Twitter" /></a>
+          </div>
+        </div>
+        <p class="art-footer-quote">
+          "Nobody ever figures out what life is all about, and it doesn't matter.<br>
+          Explore the world. Nearly everything is really interesting if you go into it deeply enough."<br>
+          ― Richard P. Feynman
+        </p>
+      </div>
+    </footer>
+
+  </body>
+</html>
