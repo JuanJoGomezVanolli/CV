@@ -149,6 +149,8 @@ body {
   overflow: hidden;
   margin-bottom: 64px;
   transition: box-shadow 0.28s, transform 0.28s;
+  text-decoration: none;
+  color: var(--text);
 }
 .blog-featured:hover {
   box-shadow: 0 24px 64px rgba(0,0,0,0.10);
